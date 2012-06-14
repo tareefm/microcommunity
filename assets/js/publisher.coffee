@@ -191,11 +191,12 @@ class window.PublisherContainer extends Backbone.View
 		@addPublisher "question", "Question", new QuestionPublisher
 		@addPublisher "link", "Link", new LinkPublisher
 
-		$('#publisher-tab a').click (e) ->
-			e.preventDefault();
-			$(this).tab('show')
-		$('#publisher-tab a:first').tab('show');
 
+		$('#publisher-tab a').click (e) ->
+			e.preventDefault()
+			$(this).tab('show')
+
+		$('#publisher-tab a:first').tab('show');
 
 
 	addPublisher: (identifier, label, view)->

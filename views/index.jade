@@ -3,30 +3,32 @@ extends layout
 block content
 
 	.row
-		.span4
-			include shared/publisher
-			include shared/social_stream
-		.span8
+		.span8.offset2
+			.row
+				.span8
+					<div class="row-fluid pull-right">
+					<ul class="nav nav-tabs" id="">
+					<li><a href='#' id="news-feed-link">News Feed</a></li>
+					<li><a href='#group-board-link' id="">Group Board</a></li>
+					<li><a href='#'>About</a></li>
+					<li><a href='#'>Members</a></li>
+					<li><a href='#'>Group Log</a></li>
+
+					<input type="text" class="input-medium search-query pull-right" placeholder="Add memebers">
+					</ul>
+					<div class="tab-content" id="">
+					<div class='tab-pane' id=''></div>
+					</div>
+					</div>
 			.row
 				.span8
 					img(src="http://static.graphicflash.com/myfbcovers/images/covers/2012/03/17/73d784c05278012f067600259003b428/139864-Funny+Linux-facebook-cover.png")
 					hr
 			.row
-				.span8
-					<div class="row-fluid pull-right">
-					<ul class="nav nav-tabs" id="publisher-tab">
-					<li><a href='{identifier}'>Group Board</a></li>
-					<li><a href='{identifier}'>About</a></li>
-					<li><a href='{identifier}'>Members</a></li>
-					<li><a href='{identifier}'>Group Log</a></li>
-
-					<input type="text" class="input-medium search-query pull-right" placeholder="Add memebers">
-					</ul>
-					<div class="tab-content" id="publisher-content">
-					<div class='tab-pane' id='{identifier}'></div>
-					</div>
-					</div>
-			.row
+				.span6
+					include shared/social_stream
+					include shared/publisher
+					include shared/news_feed
 				.span8
 					include shared/content_deck
 
